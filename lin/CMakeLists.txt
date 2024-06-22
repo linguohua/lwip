@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.8)
 
 project(lwip C)
 
-set (BUILD_SHARED_LIBS ON)
+set (BUILD_SHARED_LIBS OFF)
 
 if (NOT CMAKE_SYSTEM_NAME STREQUAL "Linux" AND NOT CMAKE_SYSTEM_NAME STREQUAL "GNU")
     message(FATAL_ERROR "Lwip shared library is only working on Linux or the Hurd")
