@@ -19,6 +19,7 @@
 /test/fuzz/.depend
 
 /build
+/lin/build
 
 /contrib/examples/example_app/lwipcfg.h
 /contrib/examples/example_app/lwipopts_test.h

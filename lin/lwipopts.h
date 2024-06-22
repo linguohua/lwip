@@ -62,7 +62,7 @@
  * NO_SYS==1: Provides VERY minimal functionality. Otherwise,
  * use lwIP facilities.
  */
-#define NO_SYS                          0
+#define NO_SYS                          1
 
 /*
    ------------------------------------
@@ -75,13 +75,13 @@
  *    4 byte alignment -> #define MEM_ALIGNMENT 4
  *    2 byte alignment -> #define MEM_ALIGNMENT 2
  */
-#define MEM_ALIGNMENT                   1U
+#define MEM_ALIGNMENT                   8U
 
 /**
  * MEM_SIZE: the size of the heap memory. If the application will send
  * a lot of data that needs to be copied, this should be set high.
  */
-#define MEM_SIZE                        1600
+#define MEM_SIZE                        (64*1024*1024)
 
 /*
    ------------------------------------------------
@@ -112,7 +112,7 @@
  * MEMP_NUM_TCP_PCB: the number of simultaneously active TCP connections.
  * (requires the LWIP_TCP option)
  */
-#define MEMP_NUM_TCP_PCB                4
+#define MEMP_NUM_TCP_PCB                256
 
 /**
  * MEMP_NUM_TCP_PCB_LISTEN: the number of listening TCP connections.
@@ -175,7 +175,7 @@
 /**
  * PBUF_POOL_SIZE: the number of buffers in the pbuf pool.
  */
-#define PBUF_POOL_SIZE                  8
+#define PBUF_POOL_SIZE                  128
 
 /*
    ---------------------------------
@@ -341,7 +341,7 @@
  */
 #define LWIP_TCP                        1
 
-#define TCP_LISTEN_BACKLOG              0
+#define TCP_LISTEN_BACKLOG              1
 
 /*
    ----------------------------------
@@ -381,7 +381,7 @@
 /**
  * LWIP_NETCONN==1: Enable Netconn API (require to use api_lib.c)
  */
-#define LWIP_NETCONN                    1
+#define LWIP_NETCONN                    0
 
 /*
    ------------------------------------
@@ -391,7 +391,7 @@
 /**
  * LWIP_SOCKET==1: Enable Socket API (require to use sockets.c)
  */
-#define LWIP_SOCKET                     1
+#define LWIP_SOCKET                     0
 
 /**
  * SO_REUSE==1: Enable SO_REUSEADDR
@@ -425,7 +425,7 @@
    ---------------------------------------
 */
 
-#define LWIP_TCPIP_CORE_LOCKING    1
+#define LWIP_TCPIP_CORE_LOCKING    0
 
 #if !NO_SYS
 void sys_check_core_locking(void);
